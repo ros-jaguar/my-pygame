@@ -30,16 +30,22 @@ player_rect = player.get_rect()
 player_speed = 10
 
 def create_enemy():
-    enemy = pygame.Surface((20, 20))
-    enemy.fill(RED)
+    # enemy = pygame.Surface((20, 20))
+    # enemy.fill(RED)
+
+    enemy = pygame.image.load("enemy.png").convert_alpha()
+
     enemy_rect = pygame.Rect(width, random.randint(0, heigth), *enemy.get_size())
     enemy_speed = random.randint(4, 6)
     return [enemy, enemy_rect, enemy_speed]
 
 def create_bonus():
-    bonus = pygame.Surface((20, 20))
-    bonus.fill(GREEN)
-    bonus_rect = pygame.Rect(random.randint(0, width), 0, *bonus.get_size())
+    # bonus = pygame.Surface((20, 20))
+    # bonus.fill(GREEN)
+
+    bonus = pygame.image.load("bonus.png").convert_alpha()
+
+    bonus_rect = pygame.Rect(random.randint(0, width), -bonus.get.heigth(), *bonus.get_size())
     bonus_speed = random.randint(4, 6)
     return [bonus, bonus_rect, bonus_speed]
 
@@ -143,4 +149,3 @@ while is_working:
 
     # main_surface.fill((155, 155, 155))
     pygame.display.flip()
-
